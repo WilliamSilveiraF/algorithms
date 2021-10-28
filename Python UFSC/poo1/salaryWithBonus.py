@@ -1,0 +1,5 @@
+name = input('Qual é seu nome? ')
+fixo = float(input('Qual é o seu salário?'))
+sale = float(input('Valor total de vendas?'))
+endSalary = fixo + (sale * 0.15)
+print('TOTAL = R$ {:.2f}'.format(endSalary))
