@@ -1,2 +1,2 @@
-myName = input().split(' ')
-print('Silva' in myName)
+myName = input().lower()
+print('silva' in myName)
