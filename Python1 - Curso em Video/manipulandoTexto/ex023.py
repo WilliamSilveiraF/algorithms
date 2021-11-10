@@ -1,6 +1,9 @@
-myNum = str(input())
-newList = myNum.replace('', ' ').strip().split(' ');
+myNum = int(input())
+u = myNum // 1 % 10
+d = myNum // 10 % 10
+c = myNum // 100 % 10
+m = myNum // 1000 % 10
 print('unidade: {}\n'
       'dezena: {}\n'
       'centena: {}\n'
-      'milhar: {}'.format(newList[3], newList[2], newList[1], newList[0]))
+      'milhar: {}'.format(u, d, c, m))
