@@ -1,27 +1,25 @@
-tipo = str(input())
-classe = str(input())
-alimentacao = str(input())
+tipo = input()
+classe = input()
+alimentacao = input()
 
-if tipo == "vertebrado":
-    if classe == "ave":
-        if alimentacao == "carnivoro":
-            print('aguia')
-        if alimentacao == "onivoro":
-            print('pomba')
-    if classe == "mamifero":
-        if alimentacao == "onivoro":
-            print('homem')
-        if alimentacao == "herbivoro":
-            print('vaca')
+if tipo == 'vertebrado' and classe == 'ave' and alimentacao == 'carnivoro':
+    animal = 'aguia'
+if tipo == 'vertebrado' and classe == 'ave' and alimentacao == 'onivoro':
+    animal = 'pomba'
 
-if tipo == 'invertebrado':
-    if classe == "inseto":
-        if alimentacao == "hematofogo":
-            print('pulga')
-        if alimentacao == "herbivoro":
-            print('lagarta')
-    if classe == "anelideo":
-        if alimentacao == "hematofogo":
-            print('sanguessuga')
-        if alimentacao == "onivoro":
-            print('minhoca')
+if tipo == 'vertebrado' and classe == 'mamifero' and alimentacao == 'onivoro':
+    animal = 'homem'
+if tipo == 'vertebrado' and classe == 'mamifero' and alimentacao == 'herbivoro':
+    animal = 'vaca'
+
+
+if tipo == 'invertebrado' and classe == 'inseto' and alimentacao == 'hematofago':
+    animal = 'pulga'
+if tipo == 'invertebrado' and classe == 'inseto' and alimentacao == 'herbivoro':
+    animal = 'lagarta'
+
+if tipo == 'invertebrado' and classe == 'anelideo' and alimentacao == 'hematofago':
+    animal = 'sanguessuga'
+if tipo == 'invertebrado' and classe == 'anelideo' and alimentacao == 'onivoro':
+    animal = 'minhoca'
+print('{}'.format(animal))
