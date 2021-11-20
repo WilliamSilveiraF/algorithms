@@ -39,17 +39,6 @@ close09 = driver.find_element_by_css_selector("#Col1-1-HistoricalDataTable-Proxy
 data10 = driver.find_element_by_css_selector("#Col1-1-HistoricalDataTable-Proxy > section[data-reactid='2'] > div[data-reactid='32'] > table[data-reactid='33'] > tbody[data-reactid='50'] > tr[data-reactid='186'] > td[data-reactid='187'] > span[data-reactid='188']")
 close10 = driver.find_element_by_css_selector("#Col1-1-HistoricalDataTable-Proxy > section[data-reactid='2'] > div[data-reactid='32'] > table[data-reactid='33'] > tbody[data-reactid='50'] > tr[data-reactid='186'] > td[data-reactid='195'] > span[data-reactid='196']")
 
-#print(f"Data: {data01.text} Close: {close01.text}\n"
-#      f"Data: {data02.text} Close: {close02.text}\n"
-#      f"Data: {data03.text} Close: {close03.text}\n"
-#      f"Data: {data04.text} Close: {close04.text}\n"
-#      f"Data: {data05.text} Close: {close05.text}\n"
-#      f"Data: {data06.text} Close: {close06.text}\n"
-#      f"Data: {data07.text} Close: {close07.text}\n"
-#      f"Data: {data08.text} Close: {close08.text}\n"
-#      f"Data: {data09.text} Close: {close09.text}\n"
-#      f"Data: {data10.text} Close: {close10.text}")
-
 import csv
 
 fields = ['Date', 'BTC Closing Value']
@@ -67,9 +56,7 @@ rows = [
     [f"{data10.text}", f"{close10.text}"]
 ]
 
-filename = "eur_btc_rates.csv"
-
-with open(filename, 'w') as csvfile:
+with open("eur_btc_rates.csv", 'w') as csvfile:
     csvwriter = csv.writer(csvfile)
 
     csvwriter.writerow(fields)
