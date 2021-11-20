@@ -1,4 +1,5 @@
 import os
+
 from selenium import webdriver
 
 os.environ['PATH'] += r"C:/seleniumDrivers"
@@ -38,13 +39,39 @@ close09 = driver.find_element_by_css_selector("#Col1-1-HistoricalDataTable-Proxy
 data10 = driver.find_element_by_css_selector("#Col1-1-HistoricalDataTable-Proxy > section[data-reactid='2'] > div[data-reactid='32'] > table[data-reactid='33'] > tbody[data-reactid='50'] > tr[data-reactid='186'] > td[data-reactid='187'] > span[data-reactid='188']")
 close10 = driver.find_element_by_css_selector("#Col1-1-HistoricalDataTable-Proxy > section[data-reactid='2'] > div[data-reactid='32'] > table[data-reactid='33'] > tbody[data-reactid='50'] > tr[data-reactid='186'] > td[data-reactid='195'] > span[data-reactid='196']")
 
-print(f"Data: {data01.text} Close: {close01.text}\n"
-      f"Data: {data02.text} Close: {close02.text}\n"
-      f"Data: {data03.text} Close: {close03.text}\n"
-      f"Data: {data04.text} Close: {close04.text}\n"
-      f"Data: {data05.text} Close: {close05.text}\n"
-      f"Data: {data06.text} Close: {close06.text}\n"
-      f"Data: {data07.text} Close: {close07.text}\n"
-      f"Data: {data08.text} Close: {close08.text}\n"
-      f"Data: {data09.text} Close: {close09.text}\n"
-      f"Data: {data10.text} Close: {close10.text}")
+#print(f"Data: {data01.text} Close: {close01.text}\n"
+#      f"Data: {data02.text} Close: {close02.text}\n"
+#      f"Data: {data03.text} Close: {close03.text}\n"
+#      f"Data: {data04.text} Close: {close04.text}\n"
+#      f"Data: {data05.text} Close: {close05.text}\n"
+#      f"Data: {data06.text} Close: {close06.text}\n"
+#      f"Data: {data07.text} Close: {close07.text}\n"
+#      f"Data: {data08.text} Close: {close08.text}\n"
+#      f"Data: {data09.text} Close: {close09.text}\n"
+#      f"Data: {data10.text} Close: {close10.text}")
+
+import csv
+
+fields = ['Date', 'BTC Closing Value']
+
+rows = [
+    [f"{data01.text}", f"{close01.text}"],
+    [f"{data02.text}", f"{close02.text}"],
+    [f"{data03.text}", f"{close03.text}"],
+    [f"{data04.text}", f"{close04.text}"],
+    [f"{data05.text}", f"{close05.text}"],
+    [f"{data06.text}", f"{close06.text}"],
+    [f"{data07.text}", f"{close07.text}"],
+    [f"{data08.text}", f"{close08.text}"],
+    [f"{data09.text}", f"{close09.text}"],
+    [f"{data10.text}", f"{close10.text}"]
+]
+
+filename = "eur_btc_rates.csv"
+
+with open(filename, 'w') as csvfile:
+    csvwriter = csv.writer(csvfile)
+
+    csvwriter.writerow(fields)
+
+    csvwriter.writerows(rows)
