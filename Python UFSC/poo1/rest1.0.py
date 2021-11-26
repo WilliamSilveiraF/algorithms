@@ -1,4 +1,4 @@
-a = int(input())
-b = int(input())
-
-print(a % b)
+dividendo = int(input())
+divisor = int(input())
+#print o resto da divisão
+print(dividendo % divisor)
