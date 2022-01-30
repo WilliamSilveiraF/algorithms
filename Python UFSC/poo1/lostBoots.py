@@ -11,13 +11,9 @@ while True:
             else:
                 left.append(bootNumber)
         myKeyBoots = list(dict.fromkeys(right))
+        for n in range(myKeyBoots):
 
-        for p in myKeyBoots:
-            leftPairs = left.count(myKeyBoots[int(p)])
-            rightPairs = right.count(myKeyBoots[int(p)])
-            if leftPairs > 0:
-                equalsBoot = rightPairs if leftPairs > rightPairs else leftPairs
-                result += equalsBoot
-        print(result)
+
+        print(myKeyBoots, right, left)
     except EOFError:
         break
