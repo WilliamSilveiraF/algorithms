@@ -20,7 +20,6 @@ for idx, power in enumerate(sequence):
             result[idx + 1] += 1
         if sequence[idx - 1] == 0:
             result[idx - 1] += 1
-    print(f"Round: {idx}, {result}")
 
 for x in result:
     print(x)

@@ -1,9 +1,8 @@
-turns = int(input())
-
 while True:
     try:
+        turns = int(input())
         result = ''
-        for turn in range(turns):
+        for _ in range(turns):
             binary = input()
             decimal = int(binary, 2)
             result += chr(decimal)
