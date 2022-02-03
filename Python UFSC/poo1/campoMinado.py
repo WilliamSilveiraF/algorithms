@@ -1,25 +1,18 @@
 turns = int(input())
-sequence = []
-result = []
-for turn in range(turns):
-    theUnit = int(input())
-    sequence.append(theUnit)
-    result.append(0)
-for idx, power in enumerate(sequence):
-    if idx == 0 and power == 1:
-        result[0] += 1
-        result[1] += 1
-    elif idx == len(sequence) - 1 and power == 1:
-        result[-1] += 1
-        result[idx - 1] += 1
-    elif power == 1:
-        result[idx] += 2
-        if sequence[idx - 1] == 1 and sequence[idx + 1] == 1:
-            result[idx] += 1
-        if sequence[idx + 1] == 0:
-            result[idx + 1] += 1
-        if sequence[idx - 1] == 0:
-            result[idx - 1] += 1
 
-for x in result:
-    print(x)
+minas = [0] * turns
+
+for i in range(0, turns):
+    bomb = int(input())
+
+    left = i - 1
+    right = i + 1
+
+    minas[i] += bomb
+    if left >= 0:
+        minas[left] += bomb
+    if right <= turns - 1:
+        minas[right] += bomb
+
+for result in range(0, turns):
+    print(minas[result])
