@@ -1,5 +1,5 @@
-n = int(input()) #pegue a tecla objetivo
+n = int(input()) 
 
-result = ((n+1) * (n+2)) / 2 #calcule conforme a tecla do enuciado
+result = ((n+1) * (n+2)) / 2 
 
 print(int(result))

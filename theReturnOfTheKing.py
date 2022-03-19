@@ -1,20 +1,20 @@
-nRunes, amtFriendship = map(int, input().split(' ')) #pegue a quantidade de runes e amizade
-runes = {} #set meu dicionário de runas
+nRunes, amtFriendship = map(int, input().split(' ')) 
+runes = {} 
 
-for _ in range(nRunes): #percorre todas as quantidades de nRunes, para coletar todas as runas
-    ri, vi = input().split() #pega runa e o valor da amizade
-    runes[ri] = int(vi) #cadastra runa e seu respectivo valor no meu dicionário de runa
+for _ in range(nRunes): 
+    ri, vi = input().split() 
+    runes[ri] = int(vi) 
 
-_ = input() #ignora a quantidade de runas recitadas por Frodo e Sam
+_ = input()
 
-selected = input().split(' ') #pega a lista de runas recitadas
+selected = input().split(' ') 
 
-framt = 0 #set meu índice de quantidade de amizade
+framt = 0 
 
-for rune in selected: #conta todos os valores das minhas runas recitadas
+for rune in selected: 
     framt += runes[rune]
 
-print(framt) #printa minha quantidade de amizade
+print(framt) 
 
 if framt >= amtFriendship:
     print("You shall pass!")

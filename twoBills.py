@@ -1,22 +1,22 @@
-bills = [100, 50, 20, 10, 5, 2] #Ordena as notas de forma decrescente para facilitar a exclusão
+bills = [100, 50, 20, 10, 5, 2] 
 
 while True:
-    isPossible = False #Minha flag para quando descrobrir que é possível a soma de 2 notas darem o troco
-    value, payment = map(int, input().split()) #pegar o valor e o pagamento
+    isPossible = False 
+    value, payment = map(int, input().split()) 
 
-    if value == 0 and payment == 0: #se eles forem zero é para quebrar o loop conforme meu enuciado
+    if value == 0 and payment == 0: 
         break
-    diff = payment - value #pego o valor total do meu troco
+    diff = payment - value 
 
-    for idx, note in enumerate(bills): #Os 2 loops foram organizado de forma que excluí notas já analisadas ou iguais
+    for idx, note in enumerate(bills):
         for nIdx, note2 in enumerate(bills):
             if nIdx <= idx:
                 continue
-            if note + note2 == diff: #testando se a soma dos dois números dá o valor exato do troco
-                isPossible = True #se sim aciona minha flag e quebro o primeiro o loop
+            if note + note2 == diff: 
+                isPossible = True 
                 break
-        if isPossible: # com minha flag ativada, quebro o outro loop e printo que é possível
+        if isPossible: 
             print("possible")
             break
-    if not isPossible: #se eu terminar meus 2 loop que fazem a combinação das notas e a minha Flag ainda é False, ela vai print que é impossível
+    if not isPossible: 
         print("impossible")

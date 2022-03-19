@@ -1,12 +1,12 @@
-cases = int(input())
+cases = int(input()) 
 b = 0
-a = 0
+a = 0 
 m = 0
 d = 0
 for _ in range(cases):
-    _, tp, amt = input().split()
+    _, tp, amt = input().split() 
 
-    if tp == "bonecos":
+    if tp == "bonecos": 
         b += int(amt)
     elif tp == "arquitetos":
         a += int(amt)
@@ -15,5 +15,4 @@ for _ in range(cases):
     elif tp == "desenhistas":
         d += int(amt)
 
-print(b // 8 + a // 4 + m // 6 + d // 12)
-
+print(b // 8 + a // 4 + m // 6 + d // 12) 
